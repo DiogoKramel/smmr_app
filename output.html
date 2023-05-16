@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Basic page information -->
+	<meta name="description" content="An online application designed to evaluate the impact of anthropogenic activities on marine mammals species">
+	<meta name="keywords" content="Whales, Agent-based Model, Simulation">
+	<meta name="author" content="Diogo Kramel">
+  <title> Results </title>
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+  <!-- Custom Google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,300,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+
+	<!-- Bootstrap CSS Style -->
+	<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/fonts/et-line-font/style.css">
+	<link rel="stylesheet" href="assets/fonts/font-awesome-4.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/bxslider/jquery.bxslider.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel/owl.carousel.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel/owl.theme.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel/owl.transitions.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="assets/css/YTPlayer/jquery.mb.YTPlayer.min.css">
+	<link rel="stylesheet" href="assets/css/superslides.css">
+	<link rel="stylesheet" href="assets/css/vegas.min.css">
+  <link rel="stylesheet" href="assets/css/morphext.css">
+  <link rel="stylesheet" href="assets/css/style_output.css">
+
+  <!-- JS libraries and scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="assets/js/jquery.query-object.js"></script>
+  <script src="assets/snippets/discrete.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.10.0/math.js"></script>
+  <script src="assets/snippets/seedrandom-min.js"></script>
+  <script src="assets/snippets/mctad.min.js"></script>
+
+  <!-- JS libraries and scripts -->
+  <script src="assets/js/jquery-1.11.3.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+  <script src="assets/js/jquery.stellar.min.js"></script>
+  <script src="assets/js/jquery.countTo.js"></script>
+  <script src="assets/js/jquery.waypoints.js"></script>
+  <script src="assets/js/jquery.imagesloaded.min.js"></script>
+  <script src="assets/js/jquery.appear.min.js"></script>
+  <script src="assets/js/jquery.bxslider.min.js"></script>
+  <script src="assets/js/jquery.isotope.js"></script>
+  <script src="assets/js/jquery.placeholder.js"></script>
+  <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+  <script src="assets/js/jquery.fitvids.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+  <script src="assets/js/jquery.owl.carousel.min.js"></script>
+  <script src="assets/js/jquery.superslides.min.js"></script>
+  <script src="assets/js/jquery.burger-menu.js"></script>
+  <script src="assets/js/burger-menu-scroll.js"></script>
+  <script src="assets/js/vegas.min.js"></script>
+  <script src="assets/js/jquery.morphext.min.js"></script>
+  <script src="https://maps.google.com/maps/api/js"></script>
+  <script src="assets/js/jquery.gmaps.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+  /* PRINT WHALE PICTURE */
+  function checkStorage() {
+      if (localStorage.getItem("speciesSelected") == "Sperm Whale") {
+          document.getElementById("WhaleFig").src = "assets/images/whales/sperm-whale.png";
+      } else  if (localStorage.getItem("speciesSelected") == "Blue Whale") {
+        document.getElementById("WhaleFig").src = "assets/images/whales/blue-whale.png";
+      } else  if (localStorage.getItem("speciesSelected") == "Fin Whale") {
+        document.getElementById("WhaleFig").src = "assets/images/whales/fin-whale.png";
+      } else  if (localStorage.getItem("speciesSelected") == "Right Whale") {
+        document.getElementById("WhaleFig").src = "assets/images/whales/right-whale.png";
+      } else  if (localStorage.getItem("speciesSelected") == "Gray Whale") {
+        document.getElementById("WhaleFig").src = "assets/images/whales/gray-whale.png";
+      } else  if (localStorage.getItem("speciesSelected") == "Humpback Whale") {
+        document.getElementById("WhaleFig").src = "assets/images/whales/humpback-whale.png";
+      } else {
+        document.getElementById("WhaleFig").src = "assets/images/whales/undentifiedwhale.png";
+        localStorage.setItem("speciesSelected", "Alternative Species")
+      }
+	};
+</script>
+  
+</head>
+
+<body>
+
+  <!-- Preload the Whole Page -->
+	<div id="preloader">      
+    <div id="loading-animation">&nbsp;</div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="header">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navigation-nav">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a class="section-scroll" href="home.html">Home</a></li>
+            <li><a class="section-scroll" href="#about-section">About</a></li>
+            <li><a class="section-scroll" href="#process-section">How it works</a></li>
+            <li><a class="section-scroll" href="#contact-section">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Head page section -->
+  <section>
+    <div id="head-page-section-2" class="p-head-bg-33" data-stellar-background-ratio="0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="head-title-2 text-center">
+              <h2>SIMULATION RESULTS</h2>
+              <h4>Population growth, death causes and estimated profile</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sep-section"></div>
+  </section>
+
+  <!-- Project section
+  ================================================== -->
+  <br><br>
+  <section>
+    <div class="project-desc-2 pad-bt-60">
+      	<div class="container">
+        <div class="row">
+        	<div class="col-md-12">
+				<h3 class="bt-0">Parameters implemented</h3>
+				<p>
+				The simulation is concluded. An overview of the parameters that were implemented in the algorithm is listed in the table below. Following the table, you will find the results plotted over time and several analyses derivated from your initial data. All of them can be exported as an image to your computer. 
+				</p>
+				<p>
+				At the end of the page, you can also find the link to return to the simulation and change the initial parameters.
+				</p>
+				<div id="input-data" class="arialblack centerimg" style="width: 500pt"></div>
+					<h3 class="bt-0">Species selected</h3>
+					<p><div id="result" class="arialblack"></div></p>
+					<img src="" id ="WhaleFig" class="centerimg">
+					<script>checkStorage();</script>
+					<script type="text/javascript"> 
+					var x = "The species selected is the <b><i>" + localStorage.getItem("speciesSelected") +"</i></b>. If you want to edit the input parameters for the <b><i>" + localStorage.getItem("speciesSelected") +"</i></b>, it is possible to return and personalise them in order to meet your study area, or to analyse different scenarios for higher degrees of risk.";
+					document.getElementById("result").innerHTML = x; 
+					</script>
+					<h3 class="bt-0">SIMULATION RESULTS</h3>
+					<p>
+						Through this line chart, we can visualize the trend over time (in years). The chart shows the total population variation throughout time, as well as divided into three categories: adult females, adult males, and juveniles of both genders. The confidence interval for the total population limits is 99%.
+          </p>
+          <div id="input-growth" class="arialblack centerimg" style="height: 50pt; width: 500pt"></div>
+					<div id="plot-population" style="width: 100%;"></div>
+					<br>
+					<p>
+						Here we can see the distribution of the ship strikes and natural deaths observed in the time period simulated, as well as other threats, in case of any. The numbers per year are an approximation of the average, and for this reason, they are not necessarily round numbers.
+					</p>
+					<div id="plot-deaths" style="width: 100%;"></div>
+				</div> 
+				<div class="col-md-12">
+					<div class="col-md-6">
+						<p> The graph below may help you understand the aging process of the population. In case they happen to be growing older on average, the fertility will decrease and in a near future population will also decrease.</p>
+					</div>
+					<div class="col-md-6">
+						<p> The same applies to the age profile in the last year. Normally, the population will have a high number of juveniles, that slowly decrease until the life expectancy is reached.</p>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-6">
+						<div id="plot-aging" style="width: 100%;"></div>
+					</div>
+					<div class="col-md-6">
+						<div id="plotAgeLastYear" style="width: 100%;"></div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-6">
+						<p>A probability density function (PDF) is a function, whose value can be interpreted as providing a relative likelihood for a certain number of collisions. The sum of each individual probability should result in 100%.</p>
+					</div>
+					<div class="col-md-6">
+						<p>Cumulative distribution function (CDF) of the probability of having a certain number of deaths, is the probability for having that number of deaths or less. Choose the cause of death in the dropdown box to update the graph. </p>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-6">
+						<div id="plot-probability-normal" style="width: 100%;"></div>
+					</div>
+					<div class="col-md-6">
+						<div id="plot-probability" style="width: 100%;"></div>
+					</div>
+				</div>
+				<div class="col-md-12">
+          <div class="col-md-8">
+					  <p>Lastly, all the simulations run are plotted over time, along with the standard deviation and the confidence interval, in order to show the most positive and negative cases and how far they are from the average.</p>
+          </div>
+          <div class="col-md-4">
+              <p>Below we can see the ocurrence of each growth rate interval among all simulations run.</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-8">
+            <div id="plot-allSimulations" style="width: 100%;"></div><br>
+          </div>
+          <div class="col-md-4">
+            <div id="plot-probabilityGrowth" style="width: 100%;"></div>
+          </div>
+        </div>
+			</div> 
+		</div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="container pad-bt-60">
+      <div class="row">
+        <div class="col-md-12">
+          <a href="input.html" class=" btn btn-recalculate">CHANGE PARAMETERS AND SIMULATE AGAIN</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer --> 
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="text-align:center">
+          <p>Diogo Kramel @2018. All Rights Reserved.</p>
+        </div>
+      </div>     
+    </div>
+  </footer>
+
+</body>
+
+<!-- Scripts for simulation and ploting -->
+<script src="simulation.js"></script>
+<script src="plots.js"></script>
+
+</html>
